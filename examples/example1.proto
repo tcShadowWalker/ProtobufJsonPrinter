@@ -16,19 +16,28 @@ message PhoneNumber
 	PhoneType type = 2;
 }
 
+message Address
+{
+	string name = 1;
+	string city = 2;
+	string country = 3;
+	int32 postalCode = 4;
+}
+
 message Person
 {
 	string name = 1;
 	int32 id = 2;  // Unique ID number for this person.
-	string email = 3;
+	repeated string email = 3;
 
 	repeated PhoneNumber phones = 4;
+	repeated Address addresses = 5;
 	
-	google.protobuf.Timestamp last_updated = 5;
+	google.protobuf.Timestamp last_updated = 6;
 	
-	Date birthday = 6;
+	Date birthday = 7;
 	
-	TimeOfDay do_not_call_before = 7;
+	TimeOfDay do_not_call_before = 8;
 }
 
 message AddressBook

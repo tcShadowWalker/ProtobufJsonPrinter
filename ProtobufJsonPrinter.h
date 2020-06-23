@@ -1,6 +1,10 @@
+#pragma once
+
 #include <google/protobuf/message.h>
 #include <cassert>
 #include <functional>
+
+// Code from https://github.com/tcShadowWalker/ProtobufJsonPrinter
 
 /**
  * @brief Utility class to pretty-print Protobuf to Json.
@@ -159,13 +163,13 @@ void ProtobufJsonPrinter::handleField (google::protobuf::FieldDescriptor::Type t
 	}
 	case FieldDescriptor::TYPE_STRING: {
 		out->push_back('"');
-		const std::string &d = refl->GetStringReference(m, f, &this->tmpFieldStr);
+		const std::string &d = IsRepeated ? refl->GetRepeatedStringReference(m, f, index, &this->tmpFieldStr) : refl->GetStringReference(m, f, &this->tmpFieldStr);
 		escapeString(d.data(), d.size(), *out);
 		out->push_back('"');
 		break;
 	}
 	case FieldDescriptor::TYPE_ENUM: {
-		const EnumValueDescriptor *evd = refl->GetEnum(m, f);
+		const EnumValueDescriptor *evd = IsRepeated ? refl->GetRepeatedEnum(m, f, index) : refl->GetEnum(m, f);
 		out->push_back('"');
 		out->append(evd->name());
 		out->push_back('"');
@@ -243,20 +247,18 @@ void ProtobufJsonPrinter::messageToJson (const google::protobuf::Message &m, std
 			int count = refl->FieldSize(m, f);
 			if (count > 0) 
 				out->append("\n");
-			for (int j = 0; j < count; ++j) {
-				if (tp == FieldDescriptor::TYPE_MESSAGE) {
-					--indent;
-					out->append(indent);
-				}
+			for (int j = 0; j < count; ++j)
+			{
+				--indent;
+				out->append(indent);
+				
 				handleField<true> (tp, refl, f, m, j, out);
 				if (j + 1 != count)
 					out->append(", ");
 				
-				if (tp == FieldDescriptor::TYPE_MESSAGE) {
-					++indent;
-					if (j + 1 != count)
-						out->append("\n");
-				}
+				++indent;
+				if (j + 1 != count)
+					out->append("\n");
 			}
 			if (count > 0)  {
 				out->append("\n");

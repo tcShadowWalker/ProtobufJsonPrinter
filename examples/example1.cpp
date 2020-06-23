@@ -65,6 +65,8 @@ int main (int argc, const char **argv)
 	// These types are short in the Json representation, and are preferrable to read on one-line.
 	jsonPrint.setTypeFlag( td::PhoneNumber::descriptor(), ProtobufJsonPrinter::TypeFlag::OnOneLine );
 	
+	jsonPrint.setTypeFlag( td::Address::descriptor(), ProtobufJsonPrinter::TypeFlag::OnOneLine );
+	
 	jsonPrint.toJson (root, &str);
 	
 	std::cout << str << "\n";

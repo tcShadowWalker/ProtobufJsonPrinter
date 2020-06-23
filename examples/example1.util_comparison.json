@@ -1,0 +1,148 @@
+{
+ "people": [
+  {
+   "name": "John Smith",
+   "id": 1,
+   "email": [
+    "jsmith@example.net"
+   ],
+   "phones": [
+    {
+     "number": "724-8557-966",
+     "type": "WORK"
+    },
+    {
+     "number": "122-2812-498"
+    }
+   ],
+   "addresses": [
+    {
+     "name": "Main Street",
+     "city": "Podunk",
+     "country": "Bongo Bongo Land",
+     "postalCode": 97323
+    }
+   ],
+   "lastUpdated": "2018-10-25T19:12:00Z",
+   "birthday": {
+    "year": 1978,
+    "month": 7,
+    "day": 18
+   },
+   "doNotCallBefore": {
+    "hours": 8
+   }
+  },
+  {
+   "name": "Jane Public",
+   "id": 2,
+   "email": [
+    "jane@allyourbasearebelongto.us"
+   ],
+   "phones": [
+    {
+     "number": "613-5435-600",
+     "type": "HOME"
+    },
+    {
+     "number": "622-9015-145",
+     "type": "HOME"
+    },
+    {
+     "number": "973-3670-856",
+     "type": "WORK"
+    }
+   ],
+   "addresses": [
+    {
+     "name": "Main Street",
+     "city": "Anytown",
+     "country": "Waikikamukau",
+     "postalCode": 84743
+    },
+    {
+     "name": "Heywood Cedars",
+     "city": "Anytown",
+     "country": "Waikikamukau",
+     "postalCode": 51809
+    }
+   ],
+   "lastUpdated": "2017-10-18T04:00:00Z",
+   "birthday": {
+    "year": 1995,
+    "month": 9,
+    "day": 24
+   },
+   "doNotCallBefore": {
+    "hours": 10,
+    "minutes": 40
+   }
+  },
+  {
+   "name": "Jock Tamson",
+   "id": 3,
+   "email": [
+    "skynet555@example.org"
+   ],
+   "phones": [
+    {
+     "number": "223-8330-609",
+     "type": "WORK"
+    }
+   ],
+   "addresses": [
+    {
+     "name": "Heywood Cedars",
+     "city": "Anytown",
+     "country": "Timbuktu",
+     "postalCode": 68699
+    }
+   ],
+   "lastUpdated": "2017-01-08T16:48:00Z",
+   "birthday": {
+    "year": 1992,
+    "month": 10,
+    "day": 13
+   },
+   "doNotCallBefore": {
+    "hours": 9,
+    "minutes": 30
+   }
+  },
+  {
+   "name": "Susie Macks",
+   "id": 4,
+   "email": [
+    "yoga@macks.com"
+   ],
+   "phones": [
+    {
+     "number": "835-5702-733",
+     "type": "WORK"
+    },
+    {
+     "number": "134-7464-173",
+     "type": "HOME"
+    }
+   ],
+   "addresses": [
+    {
+     "name": "Heywood Cedars",
+     "city": "Podunk",
+     "country": "Timbuktu",
+     "postalCode": 50084
+    }
+   ],
+   "lastUpdated": "2018-05-04T09:12:00Z",
+   "birthday": {
+    "year": 1989,
+    "month": 3,
+    "day": 27
+   },
+   "doNotCallBefore": {
+    "hours": 10,
+    "minutes": 10
+   }
+  }
+ ]
+}

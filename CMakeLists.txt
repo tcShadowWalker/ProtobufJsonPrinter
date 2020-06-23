@@ -26,3 +26,11 @@ include_directories(.)
 
 add_executable(example1 examples/example1.cpp ${PROTO_SRCS})
 target_link_libraries(example1 ${PROTOBUF_LIBRARIES})
+
+add_executable(generate_data EXCLUDE_FROM_ALL examples/generate_data.cpp ${PROTO_SRCS} )
+target_link_libraries(generate_data ${PROTOBUF_LIBRARIES})
+
+## Example:
+
+# make generate_data && ./generate_data example1.msg
+# make example1 && ./example1 example1.msg
